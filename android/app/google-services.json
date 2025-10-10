@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "486154282731",
+    "project_id": "financiera1-bee36",
+    "storage_bucket": "financiera1-bee36.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486154282731:android:f87c4727e291a2a36b40ae",
+        "android_client_info": {
+          "package_name": "com.company.appconfianzamicro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgpqyp-G8bUJk7uAfgB_2KlWT5pwBo_gY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
