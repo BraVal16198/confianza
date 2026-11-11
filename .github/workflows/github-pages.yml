@@ -31,7 +31,7 @@ jobs:
         run: flutter pub get
 
       - name: Build web
-        run: flutter build web --release --base-href /confianza/ --pwa-strategy offline-first
+        run: flutter build web --release --base-href /confianza/ --pwa-strategy offline-first --web-resources-cdn
 
       - name: Ensure SEO static files in build
         run: |

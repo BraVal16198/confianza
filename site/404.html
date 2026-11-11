@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!--
+    base href is replaced by flutter build --base-href
+  -->
+  <base href="/confianza/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ConfianzaMicro — Microfinanzas para asesores</title>
+  <meta
+    name="description"
+    content="Demo de portafolio: app Flutter de microfinanzas para asesores. Login mock, clientes, tareas y portafolio con datos simulados. Sin cobros reales."
+  />
+  <meta name="theme-color" content="#1565C0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="author" content="BraVal16198" />
+
+  <!--
+    CSP vía meta (GitHub Pages no permite cabeceras HTTP custom).
+    Flutter web (CanvasKit/WASM) requiere unsafe-eval / wasm-unsafe-eval y blob workers.
+    Cabeceras HTTP reales: ver vercel.json si se despliega en Vercel.
+  -->
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://fonts.gstatic.com https://www.gstatic.com; worker-src 'self' blob:; child-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
+  />
+
+  <link rel="canonical" href="https://braval16198.github.io/confianza/" />
+
+  <!-- iOS / PWA -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ConfianzaMicro">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="ConfianzaMicro" />
+  <meta property="og:url" content="https://braval16198.github.io/confianza/" />
+  <meta property="og:title" content="ConfianzaMicro — Microfinanzas para asesores" />
+  <meta
+    property="og:description"
+    content="Demo SPA Flutter: gestión de clientes, tareas y portafolio para asesores de microfinanzas. Datos mock; no procesa créditos reales."
+  />
+  <meta
+    property="og:image"
+    content="https://braval16198.github.io/confianza/og-image.svg"
+  />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ConfianzaMicro — Microfinanzas para asesores" />
+  <meta
+    name="twitter:description"
+    content="Demo de portafolio Flutter web: login mock, clientes, tareas y menú de asesor. Ideal para revisión de talento."
+  />
+  <meta
+    name="twitter:image"
+    content="https://braval16198.github.io/confianza/og-image.svg"
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ConfianzaMicro",
+    "alternateName": "Confianza Microfinanzas",
+    "url": "https://braval16198.github.io/confianza/",
+    "description": "Demo de portafolio de una aplicación Flutter para asesores de microfinanzas: autenticación mock, clientes, tareas, portafolio y menú operativo con datos simulados. No otorga créditos ni procesa pagos reales.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "es",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "BraVal16198",
+      "url": "https://github.com/BraVal16198"
+    },
+    "screenshot": "https://braval16198.github.io/confianza/og-image.svg"
+  }
+  </script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #f5f7fb;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    /* Contenido estático para crawlers / noscript; oculto visualmente cuando carga Flutter */
+    #seo-bootstrap {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .flt-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #1565C0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#app-root" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Saltar al contenido</a>
+
+  <main id="seo-bootstrap">
+    <h1>ConfianzaMicro — Microfinanzas para asesores</h1>
+    <p>
+      ConfianzaMicro es una demostración de portafolio de una aplicación Flutter orientada a
+      asesores de microfinanzas. Permite explorar un flujo realista de trabajo diario:
+      autenticación con credenciales de prueba, menú operativo, consulta de clientes,
+      seguimiento de tareas y vista de portafolio. Todo el contenido usa datos simulados;
+      no se otorgan créditos, no hay cobros reales y no se conecta a un core bancario.
+    </p>
+    <p>
+      La demo corre en el navegador. No hace falta clonar el repositorio ni crear una cuenta
+      de GitHub para usarla. GitHub Pages solo actúa como hosting estático HTTPS. El enlace
+      al código fuente es opcional para quien quiera revisar la arquitectura.
+    </p>
+    <h2>Qué incluye esta demo</h2>
+    <p>
+      Pantalla de bienvenida animada, inicio de sesión con validación de formulario,
+      persistencia de sesión en el navegador, menú del asesor con accesos a portafolio,
+      clientes, tareas, cobranza, solicitudes, reportes, visitas y configuración.
+      Las secciones de clientes y tareas operan sobre un almacén en memoria con registros
+      de ejemplo (scores, saldos, fechas de visita y estados de tarea). Las rutas restantes
+      muestran stubs claros de funcionalidad en desarrollo.
+    </p>
+    <h2>Cómo probar</h2>
+    <p>
+      Credenciales demo: código A001 con contraseña 1234 (Asesor Confianza) o código A002
+      con contraseña 5678 (María González). Tras ingresar verás el menú principal y podrás
+      navegar entre módulos sin instalar Flutter. Esta pieza está pensada para revisión de
+      talento frontend/móvil: Clean Architecture (UI, Core, Domain), GoRouter, Material 3
+      y servicios mock listos para sustituir por API real.
+    </p>
+    <h2>Alcance y límites</h2>
+    <p>
+      ConfianzaMicro no es un producto financiero en producción. No almacena datos personales
+      sensibles en servidores, no cumple requisitos SBS/PCI y no debe usarse para operaciones
+      reales. El objetivo es demostrar calidad de interfaz, estructura de código, despliegue
+      web con SEO técnico (title, meta, Open Graph, Twitter Card, canonical, robots, sitemap,
+      contenido crawler-visible en español) y buenas prácticas básicas de seguridad y
+      accesibilidad en un SPA Flutter servido por HTTPS.
+    </p>
+    <p>
+      Repositorio: https://github.com/BraVal16198/confianza —
+      URL canónica de la demo: https://braval16198.github.io/confianza/
+    </p>
+  </main>
+
+  <div id="app-root" class="flt-loading" aria-live="polite">Cargando ConfianzaMicro…</div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var boot = document.getElementById('seo-bootstrap');
+      if (boot) boot.setAttribute('aria-hidden', 'true');
+      var loading = document.getElementById('app-root');
+      if (loading) loading.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

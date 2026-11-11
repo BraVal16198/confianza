@@ -50,7 +50,9 @@ El workflow [`.github/workflows/github-pages.yml`](./.github/workflows/github-pa
 
 URL esperada: `https://braval16198.github.io/confianza/`
 
-Si Pages aún no está activo en el repo: **Settings → Pages → Source → Deploy from a branch → `gh-pages` / root**, o deja que el workflow intente crearlo (`pages: write`).
+Si Pages aún no está activo (Actions suele devolver 403 al crearlo): el owner debe hacerlo **una vez** en  
+**Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: `gh-pages` / `/ (root)` → Save**.  
+La rama `gh-pages` ya tiene el build; tras Save la URL queda en vivo.
 
 ### Vercel (alternativa)
 
