@@ -123,7 +123,7 @@ class _PortfolioScreenState extends State<PortfolioScreen> {
                   children: [
                     _buildStatCard('Total Clientes', '${_clients.length}', Icons.people),
                     _buildStatCard('Cartera Total', '\$${_getTotalBalance().toStringAsFixed(0)}', Icons.account_balance_wallet),
-                    _buildStatCard('Score Promedio', '${_getAverageScore().toStringAsFixed(1)}', Icons.trending_up),
+                    _buildStatCard('Score Promedio', _getAverageScore().toStringAsFixed(1), Icons.trending_up),
                   ],
                 ),
               ],

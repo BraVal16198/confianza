@@ -119,7 +119,7 @@ class _ClientsScreenState extends State<ClientsScreen> {
                   children: [
                     _buildStatCard('Total', '${_clients.length}', Icons.people),
                     _buildStatCard('Con Deuda', '${_clients.where((c) => c.balance > 0).length}', Icons.warning),
-                    _buildStatCard('Score Prom.', '${_getAverageScore().toStringAsFixed(1)}', Icons.trending_up),
+                    _buildStatCard('Score Prom.', _getAverageScore().toStringAsFixed(1), Icons.trending_up),
                   ],
                 ),
               ],
@@ -544,8 +544,9 @@ class _ClientsScreenState extends State<ClientsScreen> {
           ElevatedButton(
             onPressed: () async {
               if (formKey.currentState!.validate()) {
+                final existing = isEditing ? client : null;
                 await _saveClient(
-                  isEditing ? client! : null,
+                  existing,
                   nameController.text.trim(),
                   emailController.text.trim().isEmpty ? null : emailController.text.trim(),
                   phoneController.text.trim().isEmpty ? null : phoneController.text.trim(),
@@ -554,7 +555,9 @@ class _ClientsScreenState extends State<ClientsScreen> {
                   double.tryParse(balanceController.text) ?? 0.0,
                   notesController.text.trim().isEmpty ? null : notesController.text.trim(),
                 );
-                Navigator.of(context).pop();
+                if (context.mounted) {
+                  Navigator.of(context).pop();
+                }
               }
             },
             child: Text(isEditing ? 'Actualizar' : 'Crear'),
