@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="ConfianzaMicro">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0D47A1"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="180" fill="#42A5F5" opacity="0.25"/>
+  <circle cx="160" cy="520" r="220" fill="#90CAF9" opacity="0.2"/>
+  <text x="80" y="250" fill="#FFFFFF" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700">ConfianzaMicro</text>
+  <text x="80" y="330" fill="#E3F2FD" font-family="Segoe UI, Arial, sans-serif" font-size="36">Microfinanzas para asesores</text>
+  <text x="80" y="400" fill="#BBDEFB" font-family="Segoe UI, Arial, sans-serif" font-size="24">Demo de portafolio · Flutter web · datos simulados</text>
+</svg>
