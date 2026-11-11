@@ -1,4 +1,0 @@
-Contact: https://github.com/BraVal16198/confianza/issues
-Preferred-Languages: es, en
-Canonical: https://braval16198.github.io/confianza/.well-known/security.txt
-Policy: Esta es una demo de portafolio con datos simulados; no procesa información financiera real.

@@ -38,6 +38,9 @@ jobs:
           cp -f web/robots.txt build/web/robots.txt
           cp -f web/sitemap.xml build/web/sitemap.xml
           cp -f web/og-image.svg build/web/og-image.svg
+          cp -f web/llms.txt build/web/llms.txt
+          cp -f web/aviso-legal.html build/web/aviso-legal.html
+          cp -f web/privacidad.html build/web/privacidad.html
           mkdir -p build/web/.well-known
           cp -f web/.well-known/security.txt build/web/.well-known/security.txt
           # SPA fallback for deep links on project Pages
