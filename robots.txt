@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Rastreadores de IA (auditorIAweb / SEO e IA)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://braval16198.github.io/confianza/sitemap.xml

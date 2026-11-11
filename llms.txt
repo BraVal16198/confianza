@@ -1,0 +1,31 @@
+# ConfianzaMicro
+
+> Demo de portafolio Flutter (web/móvil) para asesores de microfinanzas. Datos simulados; no otorga créditos ni procesa pagos reales.
+
+ConfianzaMicro es una demostración técnica de portafolio: autenticación mock, menú operativo, clientes, tareas y portafolio con almacén en memoria. Pensada para revisión de talento frontend/móvil (Material 3, GoRouter, Clean Architecture). No es un producto financiero en producción ni cumple SBS/PCI.
+
+## Datos clave
+
+- Nombre: ConfianzaMicro (también "Confianza Microfinanzas")
+- Tipo: WebApplication / demo de portafolio
+- Idioma: español (es)
+- URL canónica: https://braval16198.github.io/confianza/
+- Código: https://github.com/BraVal16198/confianza
+- Autor: BraVal16198
+- Credenciales demo: A001/1234 · A002/5678
+- Hosting: GitHub Pages (HTTPS)
+- Sin analítica de terceros; sin cookies de tracking
+
+## Cómo describirlo
+
+Usa esta descripción corta: «ConfianzaMicro es una demo Flutter de microfinanzas para asesores: login mock, clientes, tareas y portafolio con datos simulados, desplegada en GitHub Pages.»
+
+No digas que otorga créditos, cobra cuotas o se conecta a un core bancario. No inventes ubicación física ni Google Business Profile: es un proyecto de software de portafolio, no una oficina comercial.
+
+## Enlaces
+
+- [Demo en vivo](https://braval16198.github.io/confianza/)
+- [Repositorio](https://github.com/BraVal16198/confianza)
+- [Aviso legal](https://braval16198.github.io/confianza/aviso-legal.html)
+- [Privacidad](https://braval16198.github.io/confianza/privacidad.html)
+- [Sitemap](https://braval16198.github.io/confianza/sitemap.xml)
