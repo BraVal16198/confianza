@@ -32,6 +32,8 @@ migrate_working_dir/
 .pub/
 /build/
 /coverage/
+# Artefacto de build local (el deploy usa gh-pages vía Actions)
+/site/
 
 # Symbolication related
 app.*.symbols
