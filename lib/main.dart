@@ -11,8 +11,9 @@ class ConfianzaMicroApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'ConfianzaMicro',
+      title: 'ConfianzaMicro — Microfinanzas para asesores',
       debugShowCheckedModeBanner: false,
+      locale: const Locale('es'),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.blue,

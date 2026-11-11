@@ -27,9 +27,13 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                  External Services                          │
 ├─────────────────────────────────────────────────────────────┤
-│  Firebase Auth  │  Firestore  │  SharedPreferences         │
+│  Auth mock  │  Almacén en memoria (web)  │  SharedPreferences │
 └─────────────────────────────────────────────────────────────┘
 ```
+
+> Demo de portafolio: autenticación mock y datos en memoria para Flutter web.
+> Firebase/SQLite nativo quedan como evolución futura fuera del alcance de la demo.
+
 
 ## Flujo de Navegación
 

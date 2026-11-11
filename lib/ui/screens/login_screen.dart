@@ -98,12 +98,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       const SizedBox(height: 24),
-                      Text(
-                        'ConfianzaMicro',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.blue.shade700,
+                      Semantics(
+                        header: true,
+                        child: Text(
+                          'ConfianzaMicro',
+                          style: TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue.shade700,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 8),
@@ -112,6 +115,15 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           fontSize: 18,
                           color: Colors.grey.shade600,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Demo de portafolio · datos simulados · sin cuenta de GitHub',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey.shade500,
                         ),
                       ),
                     ],
@@ -132,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         // Campo de código de asesor
                         TextFormField(
                           controller: _codeController,
+                          autofillHints: const [AutofillHints.username],
                           decoration: InputDecoration(
                             labelText: 'Código de Asesor',
                             hintText: 'Ej: A001',
@@ -154,6 +167,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextFormField(
                           controller: _passwordController,
                           obscureText: _obscurePassword,
+                          autofillHints: const [AutofillHints.password],
                           decoration: InputDecoration(
                             labelText: 'Contraseña',
                             hintText: 'Ingrese su contraseña',
@@ -164,6 +178,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ? Icons.visibility
                                     : Icons.visibility_off,
                               ),
+                              tooltip: _obscurePassword
+                                  ? 'Mostrar contraseña'
+                                  : 'Ocultar contraseña',
                               onPressed: () {
                                 setState(() {
                                   _obscurePassword = !_obscurePassword;

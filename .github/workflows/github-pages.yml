@@ -1,0 +1,72 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.35.5"
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web
+        run: flutter build web --release --base-href /confianza/ --pwa-strategy offline-first
+
+      - name: Ensure SEO static files in build
+        run: |
+          cp -f web/robots.txt build/web/robots.txt
+          cp -f web/sitemap.xml build/web/sitemap.xml
+          cp -f web/og-image.svg build/web/og-image.svg
+          mkdir -p build/web/.well-known
+          cp -f web/.well-known/security.txt build/web/.well-known/security.txt
+          # SPA fallback for deep links on project Pages
+          cp -f build/web/index.html build/web/404.html
+          touch build/web/.nojekyll
+
+      - name: Enable GitHub Pages (gh-pages branch)
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          gh api -X POST "repos/${{ github.repository }}/pages" \
+            -f build_type=legacy \
+            -f source[branch]=gh-pages \
+            -f source[path]=/ \
+            && echo "Pages site created" \
+            || echo "POST pages failed (may already exist or lack admin)"
+          gh api -X PUT "repos/${{ github.repository }}/pages" \
+            -f build_type=legacy \
+            -f source[branch]=gh-pages \
+            -f source[path]=/ \
+            && echo "Pages site updated" \
+            || echo "PUT pages failed"
+
+      - name: Publish build/web to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          force_orphan: true
+          enable_jekyll: false

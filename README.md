@@ -1,114 +1,85 @@
-# ConfianzaMicro - Sistema de Microfinanzas
+# ConfianzaMicro
 
-Una aplicación Flutter para la gestión de microfinanzas, diseñada para asesores financieros.
+Demo de portafolio: aplicación **Flutter** para asesores de microfinanzas (login mock, clientes, tareas y menú operativo). Datos simulados — no otorga créditos ni procesa pagos reales.
 
-## Características
+**Demo en vivo (HTTPS):** https://braval16198.github.io/confianza/
 
-- **Autenticación**: Sistema de login con credenciales mock para desarrollo
-- **Gestión de Sesiones**: Persistencia de sesión del usuario
-- **Navegación**: Sistema de navegación fluido entre pantallas
-- **Interfaz Moderna**: Diseño Material Design 3 con animaciones
-- **Arquitectura Limpia**: Separación de responsabilidades (UI, Core, Domain)
+> La demo corre en el navegador. No hace falta clonar el repo ni tener cuenta de GitHub para usarla. GitHub Pages es solo el hosting estático.
 
-## Estructura del Proyecto
-
-```
-lib/
-├── core/
-│   ├── router/          # Configuración de navegación
-│   └── services/        # Servicios (Auth, Session)
-├── domain/
-│   └── models/          # Modelos de datos
-└── ui/
-    └── screens/         # Pantallas de la aplicación
-```
-
-## Funcionalidades Implementadas
-
-### ✅ Completadas
-- Pantalla de Splash con animación
-- Sistema de Login con validación
-- Menú principal del asesor
-- Gestión de sesiones
-- Navegación entre pantallas
-- Pantallas stub para futuras funcionalidades
-
-### 🚧 En Desarrollo
-- Gestión de Clientes
-- Gestión de Tareas
-- Portafolio de Clientes
-- Sistema de Cobranza
-- Gestión de Solicitudes
-- Reportes
-- Sistema de Visitas
-- Configuración
-
-## Credenciales de Prueba
-
-Para probar la aplicación, usa estas credenciales:
+## Credenciales demo
 
 | Código | Contraseña | Nombre |
 |--------|------------|--------|
-| A001   | 1234       | Asesor Confianza |
-| A002   | 5678       | María González |
+| `A001` | `1234` | Asesor Confianza |
+| `A002` | `5678` | María González |
 
-## Instalación y Ejecución
+## Stack
 
-1. **Instalar dependencias**:
-   ```bash
-   flutter pub get
-   ```
+- Flutter 3.9+ / Dart (Material 3)
+- GoRouter (navegación)
+- Provider (estado, preparado)
+- SharedPreferences (sesión)
+- Almacén en memoria para la demo web (sin sqflite en browser)
 
-2. **Ejecutar la aplicación**:
-   ```bash
-   flutter run
-   ```
+Arquitectura por capas: `lib/ui` · `lib/core` · `lib/domain`. Detalle en [ARCHITECTURE.md](./ARCHITECTURE.md).
 
-3. **Para Android**:
-   ```bash
-   flutter run -d android
-   ```
+## Qué hace la demo
 
-4. **Para iOS**:
-   ```bash
-   flutter run -d ios
-   ```
+- Splash → login con validación → menú del asesor
+- Clientes: listado, búsqueda, filtros, alta/edición (mock)
+- Tareas: pendientes/completadas con datos de ejemplo
+- Portafolio y pantalla de info del almacén
+- Stubs claros para cobranza, solicitudes, reportes, visitas y ajustes
 
-## Tecnologías Utilizadas
+## Desarrollo local
 
-- **Flutter**: Framework de desarrollo
-- **Firebase**: Backend y autenticación
-- **Go Router**: Navegación
-- **Shared Preferences**: Persistencia local
-- **Provider**: Gestión de estado (preparado para futuras implementaciones)
+```bash
+flutter pub get
+flutter run -d chrome          # web
+flutter run                    # dispositivo/emulador
+flutter build web --release --base-href /confianza/
+```
 
-## Arquitectura
+Requisitos: [Flutter SDK](https://docs.flutter.dev/get-started/install) estable.
 
-La aplicación sigue los principios de **Clean Architecture**:
+## Despliegue
 
-- **Domain Layer**: Modelos de negocio y reglas
-- **Core Layer**: Servicios y configuración
-- **UI Layer**: Pantallas y widgets
+### GitHub Pages (preferido)
 
-## Paradigmas de Programación
+El workflow [`.github/workflows/github-pages.yml`](./.github/workflows/github-pages.yml) construye Flutter web y publica en la rama `gh-pages`.
 
-- **POO**: Clases para modelos, servicios y pantallas
-- **Orientado a Eventos**: Gestión de eventos de UI
-- **Programación Estructurada**: Validaciones y flujos de control
-- **Patrón Singleton**: SessionManager para gestión de sesión
+URL esperada: `https://braval16198.github.io/confianza/`
 
-## Próximos Pasos
+Si Pages aún no está activo en el repo: **Settings → Pages → Source → Deploy from a branch → `gh-pages` / root**, o deja que el workflow intente crearlo (`pages: write`).
 
-1. Implementar persistencia local con SQLite/Hive
-2. Integrar API REST real
-3. Añadir funcionalidades de cámara y geolocalización
-4. Implementar notificaciones push
-5. Añadir sincronización offline
+### Vercel (alternativa)
 
-## Contribución
+1. Importa el repo en [Vercel](https://vercel.com/).
+2. Framework preset: Other.
+3. Build command: `flutter pub get && flutter build web --release --base-href /`
+4. Output directory: `build/web`
+5. Necesitas una imagen con Flutter en el build, o un Dockerfile; `vercel.json` aporta cabeceras de seguridad cuando el host lo permite.
 
-Este proyecto está en desarrollo activo. Las contribuciones son bienvenidas.
+Para base en raíz (`/`), actualiza canonical/OG/sitemap al dominio de Vercel.
+
+## SEO / seguridad / a11y (AuditarWeb)
+
+Incluido en `web/`:
+
+- `lang="es"`, title, description, canonical
+- Open Graph + Twitter Card + JSON-LD
+- Favicon / PWA icons / `manifest.json`
+- `robots.txt`, `sitemap.xml`, `.well-known/security.txt`
+- Meta CSP + `referrer=strict-origin-when-cross-origin`
+- Bloque HTML crawler-visible (≥250 palabras, H1) para el SPA
+- Skip link básico; labels en el formulario de login
+
+Límites de GitHub Pages: no aplica cabeceras HTTP custom (`X-Frame-Options`, CSP por header). Mitigación parcial vía meta; cabeceras completas en `vercel.json`.
+
+## Alcance
+
+Proyecto educativo / revisión de talento. No cumple SBS/PCI ni debe usarse en operación real.
 
 ## Licencia
 
-Este proyecto es privado y está destinado para uso educativo.
+Uso educativo / portafolio. Ver issues del repo para contacto.

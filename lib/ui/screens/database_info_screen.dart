@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/database/database_helper.dart';
-import '../../core/services/client_service.dart';
 
 class DatabaseInfoScreen extends StatefulWidget {
   const DatabaseInfoScreen({super.key});
@@ -12,7 +11,6 @@ class DatabaseInfoScreen extends StatefulWidget {
 
 class _DatabaseInfoScreenState extends State<DatabaseInfoScreen> {
   final DatabaseHelper _dbHelper = DatabaseHelper();
-  final ClientService _clientService = ClientService();
   Map<String, dynamic>? _stats;
   bool _isLoading = true;
 
@@ -84,7 +82,7 @@ class _DatabaseInfoScreenState extends State<DatabaseInfoScreen> {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'Base de datos: confianza_micro.db',
+                            'Almacén: memoria (demo web/portafolio)',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.grey.shade700,
@@ -92,7 +90,7 @@ class _DatabaseInfoScreenState extends State<DatabaseInfoScreen> {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'Tipo: SQLite (Local)',
+                            'Tipo: In-memory (compatible con Flutter web)',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.grey.shade700,
@@ -100,7 +98,7 @@ class _DatabaseInfoScreenState extends State<DatabaseInfoScreen> {
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            'Ubicación: /data/data/com.example.microfinanza0/databases/',
+                            'Nota: en producción se sustituiría por API/SQLite nativo.',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey.shade600,
